@@ -6,7 +6,8 @@
   <div class="container">
     <h1>Get the currency exchange rate! </h1>
     <p>To get the currency exchange rate from USD, please select one of the following:</p>
-    <form id="currency-exchange">
+
+    <form id="currency-exchange-form">
       <label>Select a currency</label>
       <select id="select-currency">
         <option value="default currency">-Choose a Currency-</option>
@@ -21,13 +22,11 @@
         <option value="SGD">SGD: Singapore Dollar</option>
         <option value="ZAR">ZAR: South African Rand</option>
       </select>
-    </form>
-    <form>
       <label for="amount">Enter an amount (in USD):</label>
       <input id="amount" type="number" name="amount">
-
       <button type="submit" class="btn-success" id="currencyExchange">Get currency exchange!</button>
     </form>
+
     <p id="showResponse"></p>
   </div>
 </body>

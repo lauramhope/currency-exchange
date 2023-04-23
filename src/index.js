@@ -5,30 +5,31 @@ import CurrencyExchange from './currency.js';
 
 // Business Logic
 
-async function getExchange(amount) {
-  const response = await CurrencyExchange.getExchange(amount);
-  if (response.main) {
-    printElements(response, amount); 
+async function getExchange(foreignCurrency, amount) {
+  const response = await CurrencyExchange.getExchange(foreignCurrency, amount);
+  if (response.result) {
+    printElements(response, foreignCurrency, amount); 
   } else {
-    printError(response); 
+    printError(response, foreignCurrency, amount); 
   }
 }
 
 // UI Logic
 
 function printElements(results) {
-  document.querySelector('#showResponse').innerText = `The exchange rate from USD to ${results[1]} is ${results[0].main.conversion_rates}%.`;
+  document.querySelector('#showResponse').innerText = `The exchange rate from USD to ${foreignCurrency} is ${results.conversion_rates[foreignCurrency]}%.`;
 }
 
-function printError(error) {
-  document.querySelector('#showResponse').innerText = `There was an error accessing the exchange rate data for ${error[2]}: ${error[0].status} ${error[0].statusText}: ${error[1].message}`;
+function printError(error, foreignCurrency) {
+  document.querySelector('#showResponse').innerText = `Error accessing the exchange rate data for USD to ${foreignCurrency}: ${error}`;
 }
 
 function handleFormSubmission(event) {
   event.preventDefault();
   const amount = document.querySelector('#amount').value;
   document.querySelector('#amount').value = null;
-  getExchange(amount);
+  const foreignCurrency = document.querySelector("select#select-currency").value;
+  getExchange(foreignCurrency, amount);
 }
 
 window.addEventListener("load", function() {
