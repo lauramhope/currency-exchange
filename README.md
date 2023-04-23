@@ -21,9 +21,9 @@ _This application demonstrates using an API from ExchangeRate to convert an inpu
 
 * _Clone “currency-exchange“ from the repository to your desktop_
 * _Navigate to "currency-exchange" directory via your local terminal command line_
-* _Open the directory in VS code by typing 'code .' in the command line_
 * _Add .env file to root of directory to store API key by typing "touch .env"_
-* _Get an API key* by creating an account* on https://www.exchangerate-api.com/_
+* _Open the directory in VS code by typing 'code .' in the command line_
+* _Get an API key by creating an account on https://www.exchangerate-api.com/_
 * _Copy API key and store in .env file using the variable "API_KEY"_
 * _Run 'npm install' in the command line to install all packages_
 * _Run 'npm run build' to build the project via webpack_
