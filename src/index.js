@@ -20,7 +20,8 @@ async function getExchange(foreignCurrency, amount) {
 // UI Logic
 
 function printElements(result, target_code) {
-  document.querySelector('#showResponse').innerText = `The exchange rate from USD to ${target_code} is ${result.conversion_result}%.`;
+  let amountEntered = document.querySelector("input#amount").value; 
+  document.querySelector('#showResponse').innerText = `The exchange rate from $${amountEntered} USD to ${target_code} is ${result.conversion_result}%.`;
 }
 
 function printError(error, foreignCurrency) {
@@ -30,7 +31,7 @@ function printError(error, foreignCurrency) {
 function handleFormSubmission(event) {
   event.preventDefault();
   const amount = document.querySelector('#amount').value;
-  document.querySelector('#amount').value = null;
+  // document.querySelector('#amount').value = null;
   const foreignCurrency = document.querySelector("select#select-currency").value;
   getExchange(foreignCurrency, amount);
 }
