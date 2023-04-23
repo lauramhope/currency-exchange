@@ -7,9 +7,6 @@ import CurrencyExchange from './currency.js';
 
 async function getExchange(foreignCurrency, amount) {
   const response = await CurrencyExchange.getExchange(foreignCurrency, amount);
-  console.log(response);
-  console.log(foreignCurrency);
-  console.log(amount); 
   if (response.result) {
     printElements(response, foreignCurrency, amount); 
   } else {
@@ -21,7 +18,7 @@ async function getExchange(foreignCurrency, amount) {
 
 function printElements(result, target_code) {
   let amountEntered = document.querySelector("input#amount").value; 
-  document.querySelector('#showResponse').innerText = `The exchange rate from $${amountEntered} USD to ${target_code} is ${result.conversion_result}%.`;
+  document.querySelector('#showResponse').innerText = `Exchange rate: ${amountEntered} USD = ${result.conversion_result} ${target_code}.`;
 }
 
 function printError(error, foreignCurrency) {
