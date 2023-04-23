@@ -20,7 +20,7 @@ async function getExchange(foreignCurrency, amount) {
 
 function printElements(result, target_code) {
   let amountEntered = document.querySelector("input#amount").value; 
-  document.querySelector('#showResponse').innerText = `Exchange rate: ${amountEntered} USD = ${result.conversion_result} ${target_code}.`;
+  document.querySelector('#showResponse').innerText = `Exchange rate: ${amountEntered} USD = ${(result.conversion_result).toFixed(2)} ${target_code}.`;
 }
 
 function printError(error, foreignCurrency) {

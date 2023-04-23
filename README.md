@@ -31,9 +31,9 @@ _This application demonstrates using an API from ExchangeRate to convert an inpu
 * _Run 'npm run test' to test files via Jest_
 * _Run 'npm run start' to start a development server_
 
-* _* Create an account using your email address and a password_
-* _* API key will be a unique combination of numbers and letters, allowing full access to application_
-* _* API key MUST be stored in variable "API_KEY" in the .env file - example: API_KEY=3dedc43fe425992c27b353e950b9e942_
+*Create an account using your email address and a password
+*API key will be a unique combination of numbers and letters, allowing full access to application
+*API key MUST be stored in variable "API_KEY" in the .env file - example: API_KEY=3dedc43fe425992c27b353e950b9e942
 
 ## Known Bugs
 
