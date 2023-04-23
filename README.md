@@ -25,6 +25,11 @@ _This application demonstrates using an API from ExchangeRate to convert an inpu
 * _Add .env file to root of directory to store API key by typing "touch .env"_
 * _Get an API key* by creating an account* on https://www.exchangerate-api.com/_
 * _Copy API key and store in .env file using the variable "API_KEY"_
+* _Run 'npm install' in the command line to install all packages_
+* _Run 'npm run build' to build the project via webpack_
+* _Run 'npm run lint' to lint all JS files_
+* _Run 'npm run test' to test files via Jest_
+* _Run 'npm run start' to start a development server_
 
 * _* Create an account using your email address and a password_
 * _* API key will be a unique combination of numbers and letters, allowing full access to application_
