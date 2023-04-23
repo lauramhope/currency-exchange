@@ -6,10 +6,27 @@
   <div class="container">
     <h1>Get the currency exchange rate! </h1>
     <p>To get the currency exchange rate from USD, please select one of the following:</p>
+    <form id="currency-exchange">
+      <label>Select a currency</label>
+      <select id="select-currency">
+        <option value="default currency">-Choose a Currency-</option>
+        <option value="AUD">AUD: Australian Dollar</option>
+        <option value="CAD">CAD: Canadian Dollar</option>
+        <option value="EUR">EUR: Euro</option>
+        <option value="ILS">ILS: Israeli New Shekel</option>
+        <option value="JMD">JMD: Jamaican Dollar</option>
+        <option value="MWK">MWK: Malawian Kwacha</option>
+        <option value="MXN">MXN: Mexican Peso</option>
+        <option value="NZD">NZD: New Zealand Dollar</option>
+        <option value="SGD">SGD: Singapore Dollar</option>
+        <option value="ZAR">ZAR: South African Rand</option>
+      </select>
+    </form>
     <form>
-      <label for="location">Enter a location:</label>
-      <input id="location" type="text" name="location">
-      <button type="submit" class="btn-success" id="weatherLocation">Get Current Temperature, Humidity, Wind Speed, and Weather Description</button>
+      <label for="amount">Enter an amount (in USD):</label>
+      <input id="amount" type="number" name="amount">
+
+      <button type="submit" class="btn-success" id="currencyExchange">Get currency exchange!</button>
     </form>
     <p id="showResponse"></p>
   </div>

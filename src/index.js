@@ -5,10 +5,10 @@ import CurrencyExchange from './currency.js';
 
 // Business Logic
 
-async function getExchange() {
-  const response = await CurrencyExchange.getExchange();
+async function getExchange(amount) {
+  const response = await CurrencyExchange.getExchange(amount);
   if (response.main) {
-    printElements(response); 
+    printElements(response, amount); 
   } else {
     printError(response); 
   }
@@ -16,8 +16,8 @@ async function getExchange() {
 
 // UI Logic
 
-function printElements(data) {
-  document.querySelector('#showResponse').innerText = `The change rate from USD to ${data[1]} is ${data[0].main.humidity}%.`;
+function printElements(results) {
+  document.querySelector('#showResponse').innerText = `The exchange rate from USD to ${results[1]} is ${results[0].main.conversion_rates}%.`;
 }
 
 function printError(error) {
@@ -26,9 +26,9 @@ function printError(error) {
 
 function handleFormSubmission(event) {
   event.preventDefault();
-  // const city = document.querySelector('#location').value;
-  // document.querySelector('#location').value = null;
-  getExchange();
+  const amount = document.querySelector('#amount').value;
+  document.querySelector('#amount').value = null;
+  getExchange(amount);
 }
 
 window.addEventListener("load", function() {
