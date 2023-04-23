@@ -31,7 +31,6 @@ function printError(error, foreignCurrency) {
 function handleFormSubmission(event) {
   event.preventDefault();
   const amount = document.querySelector('#amount').value;
-  // document.querySelector('#amount').value = null;
   const foreignCurrency = document.querySelector("select#select-currency").value;
   getExchange(foreignCurrency, amount);
 }
