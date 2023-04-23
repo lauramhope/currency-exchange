@@ -7,6 +7,9 @@ import CurrencyExchange from './currency.js';
 
 async function getExchange(foreignCurrency, amount) {
   const response = await CurrencyExchange.getExchange(foreignCurrency, amount);
+  console.log(response);
+  console.log(foreignCurrency);
+  console.log(amount); 
   if (response.result) {
     printElements(response, foreignCurrency, amount); 
   } else {
@@ -16,8 +19,8 @@ async function getExchange(foreignCurrency, amount) {
 
 // UI Logic
 
-function printElements(results) {
-  document.querySelector('#showResponse').innerText = `The exchange rate from USD to ${foreignCurrency} is ${results.conversion_rates[foreignCurrency]}%.`;
+function printElements(result, target_code) {
+  document.querySelector('#showResponse').innerText = `The exchange rate from USD to ${target_code} is ${result.conversion_result}%.`;
 }
 
 function printError(error, foreignCurrency) {
