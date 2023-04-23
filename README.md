@@ -1,42 +1,38 @@
-# _{Application Name}_
+# _Currency-Exchange_
 
-#### _{Brief description of application}_
+#### _Application that converts USD to select foreign currencies using ExchangeRate API_
 
-#### By **Laura Hope**_
+#### By **Laura Hope**
 
 ## Technologies Used
 
 * _HTML_
 * _CSS_
 * _JavaScript_
-* _Webpack v _
-* _Node.js v _
+* _Webpack v4.46.0_
+* _Node.js v16.13.1_
+* _Babel v7.18.6_
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_This application demonstrates using an API from ExchangeRate to convert an inputted amount in USD to 1 of 10 foreign currencies listed in dropdown box form. The API returns parsed JSON data to the user with the correct conversion rate._
 
 ## Setup/Installation Requirements
 
-* _Clone “bike-API“ from the repository to your desktop_
-* _Navigate to "bike-API" directory via your local terminal command line_
+* _Clone “currency-exchange“ from the repository to your desktop_
+* _Navigate to "currency-exchange" directory via your local terminal command line_
 * _Open the directory in VS code by typing 'code .' in the command line_
 * _Add .env file to root of directory to store API key by typing "touch .env"_
-* _Get an API key* by creating an account on https://bikeindex.org/oauth/applications_
+* _Get an API key* by creating an account* on https://www.exchangerate-api.com/_
 * _Copy API key and store in .env file using the variable "API_KEY"_
-* _Run 'npm install' in the command line to install all packages_
-* _Run 'npm run build' to build the project via webpack_
-* _Run 'npm run lint' to lint all JS files_
-* _Run 'npm run test' to test files via Jest_
-* _Run 'npm run start' to start a development server_
 
+* _* Create an account using your email address and a password_
 * _* API key will be a unique combination of numbers and letters, allowing full access to application_
-* _* API key MUST be stored in variable "API_KEY" within .env file - example: API_KEY=3dedc43fe425992c27b353e950b9e942_
+* _* API key MUST be stored in variable "API_KEY" in the .env file - example: API_KEY=3dedc43fe425992c27b353e950b9e942_
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _No known bugs as of 4/23/23_
 
 ## License
 
