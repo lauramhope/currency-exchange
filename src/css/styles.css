@@ -1,3 +1,20 @@
 body {
-  background-color: lightblue;
+  background-image: url("money.jpg");
+  background-position: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: Georgia; 
+}
+
+button {
+  background-color: #289358;
+  border: none;
+  color: white;
+  padding: 12px 28px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
 }

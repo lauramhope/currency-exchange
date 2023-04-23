@@ -4,9 +4,8 @@
 </head>
 <body>
   <div class="container">
-    <h1>Get the currency exchange rate! </h1>
-    <p>To get the currency exchange rate from USD, please select one of the following:</p>
-
+    <h1>Currency Exchange</h1>
+    <p>To get the currency exchange rate from USD, please select one of the following currencies and enter an amount below:</p>
     <form id="currency-exchange-form">
       <label>Select a currency</label>
       <select id="select-currency">
@@ -21,13 +20,13 @@
         <option value="NZD">NZD: New Zealand Dollar</option>
         <option value="SGD">SGD: Singapore Dollar</option>
         <option value="ZAR">ZAR: South African Rand</option>
+        <option value="TUI">test</option>
       </select>
-      <label for="amount">Enter an amount (in USD):</label>
+      <label for="amount">Enter amount <em>(USD)</em>:</label>
       <input id="amount" type="number" required>
       <button type="submit" class="btn-success" id="currencyExchange">Get currency exchange!</button>
     </form>
     <p id="showResponse"></p>
-    <br>
     <form>
       <button class="restart-btn" id="currency-refresh">Refresh</button>
     </form>
