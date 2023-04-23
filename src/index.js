@@ -6,10 +6,10 @@ import CurrencyExchange from './currency.js';
 // Business Logic
 
 async function getExchange(foreignCurrency, amount) {
-  const response = await CurrencyExchange.getExchange(foreignCurrency, amount);
-  if (response.result) {
+  const response = await CurrencyExchange.getExchange();
+  if (response.result) { 
     printElements(response, foreignCurrency, amount); 
-  } else if (foreignCurrency === undefined) {
+  } else if (typeof response.target_code === 'undefined') {
     falseCurrency();
   } else {
     printError(response, foreignCurrency, amount);
