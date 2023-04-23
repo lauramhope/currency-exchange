@@ -23,15 +23,15 @@ _{This is a detailed description of your application. Give as much detail as nee
 * _Open the directory in VS code by typing 'code .' in the command line_
 * _Add .env file to root of directory to store API key by typing "touch .env"_
 * _Get an API key* by creating an account on https://bikeindex.org/oauth/applications_
-* _Copy API key and store in .env file using the variable "API-KEY"_
+* _Copy API key and store in .env file using the variable "API_KEY"_
 * _Run 'npm install' in the command line to install all packages_
 * _Run 'npm run build' to build the project via webpack_
 * _Run 'npm run lint' to lint all JS files_
 * _Run 'npm run test' to test files via Jest_
 * _Run 'npm run start' to start a development server_
 
-_* API key will be a unique combination of numbers and letters, allowing full access to application_
-_* API key MUST be stored in variable "API-KEY" within .env file - example: API-KEY=3dedc43fe425992c27b353e950b9e942_
+* _* API key will be a unique combination of numbers and letters, allowing full access to application_
+* _* API key MUST be stored in variable "API_KEY" within .env file - example: API_KEY=3dedc43fe425992c27b353e950b9e942_
 
 ## Known Bugs
 
