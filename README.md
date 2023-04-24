@@ -15,7 +15,7 @@
 
 ## Description
 
-_This application demonstrates using an API from ExchangeRate to convert an inputted amount in USD to 1 of 10 foreign currencies listed in dropdown box form. The API returns parsed JSON data to the user with the correct conversion rate._
+_This application demonstrates using an API from ExchangeRate to convert an inputted amount in USD to a foreign currency listed in dropdown box form. The API returns parsed JSON data to the user with the correct conversion rate._
 
 ## Setup/Installation Requirements
 
