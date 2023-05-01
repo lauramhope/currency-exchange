@@ -35,7 +35,7 @@ Create an account using your email address and a password. API key will be a uni
 
 ## Known Bugs
 
-* _No known bugs as of 4/23/23_
+* _Bug - will not show "error" message for false currency amount - as of 4/30/23_
 
 ## License
 
