@@ -1,5 +1,6 @@
-<html lang="en-US">
-<head>
+<!DOCTYPE html>
+<html lang="en">
+ <head>
   <title>Currency Exchange</title>
 </head>
 <body>
@@ -8,8 +9,7 @@
     <p>To get the currency exchange rate from USD, please select one of the following currencies and enter an amount below:</p>
     <form id="currency-exchange-form">
       <label>Select a currency</label>
-      <select id="select-currency">
-        <option value="default currency">-Choose a Currency-</option>
+      <select name="select-currency" id="select-currency">
         <option value="ANG">ANG: Netherlands Antillian Guilder</option>
         <option value="AUD">AUD: Australian Dollar</option>
         <option value="BBD">BBD: Barbados Dollar</option>
@@ -32,7 +32,7 @@
         <option value="ZAR">ZAR: South African Rand</option>
       </select>
       <label for="amount">Enter amount <em>(USD)</em>:</label>
-      <input id="amount" type="number" required>
+      <input id="amount" type="number">
       <button type="submit" class="btn-success" id="currencyExchange">Get currency exchange!</button>
     </form>
     <p id="showResponse"></p>
@@ -40,5 +40,5 @@
       <button class="restart-btn" id="currency-refresh">Refresh</button>
     </form>
   </div>
-</body>
+</body> 
 </html>

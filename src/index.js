@@ -5,12 +5,10 @@ import CurrencyExchange from './currency.js';
 
 // Business Logic
 
-async function getExchange(foreignCurrency, amount) {
-  const response = await CurrencyExchange.getExchange(foreignCurrency, amount);
-  if (response.result) { 
-    printElements(response, foreignCurrency, amount); 
-  } else if (typeof target_code === 'undefined') {
-    falseCurrency();
+async function getExchange(foreignCurrency) {
+  const response = await CurrencyExchange.getExchange(foreignCurrency);
+  if ((response["result"] === "success") ) { 
+    printElements(response, foreignCurrency); 
   } else {
     printError(response, foreignCurrency);
   }
@@ -18,26 +16,33 @@ async function getExchange(foreignCurrency, amount) {
 
 // UI Logic
 
-function printElements(result, target_code) {
+function printElements(foreignCurrency) {
   let amountEntered = document.querySelector("input#amount").value; 
-  document.querySelector('#showResponse').innerText = `Exchange rate: ${amountEntered} USD = ${(result.conversion_result).toFixed(2)} ${target_code}`;
+  let countryCode = document.querySelector("select#select-currency").value;
+  let result = document.querySelector("#showResponse");
+  let convertedAmount = foreignCurrency.conversion_rate;
+  if (foreignCurrency) {
+    result.innerText = `Exchange rate: ${amountEntered} USD = ${(amountEntered * convertedAmount).toFixed(2)} ${countryCode}`;
+  } else {
+    result.innerText = `Error: Please enter an existing currency.`;
+  }
 }
 
 function printError(error, foreignCurrency) {
   document.querySelector('#showResponse').innerText = `Error accessing the exchange rate data for USD to ${foreignCurrency}: ${error}`;
 }
 
-function falseCurrency() {
-  document.querySelector("#showResponse").innerText = `Error: Please enter an existing currency.`; 
-}
-
 function handleFormSubmission(event) {
   event.preventDefault();
-  const amount = document.querySelector('#amount').value;
-  const foreignCurrency = document.querySelector("select#select-currency").value;
-  getExchange(foreignCurrency, amount);
+  document.querySelector('#showResponse').innerText = "";
+  let foreignCurrency = document.querySelector("select#select-currency").value;
+  // let foreignCurrency = "ABC";
+  getExchange(foreignCurrency);
 }
 
 window.addEventListener("load", function() {
   document.querySelector('form').addEventListener("submit", handleFormSubmission);
 });
+
+
+
