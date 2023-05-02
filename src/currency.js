@@ -5,10 +5,13 @@ export default class CurrencyExchange {
 
       const jsonifiedResponse = await response.json();
       if (!response.ok) {
+        if (jsonifiedResponse.result === "error") {
+          return jsonifiedResponse;
+        }
         const errorMessage = `${response.status} ${response.statusText} 
         ${jsonifiedResponse.message}`;
         throw new Error(errorMessage);
-      }
+      } 
       return jsonifiedResponse;
     } catch(error) {
       return error;

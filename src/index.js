@@ -8,7 +8,7 @@ import CurrencyExchange from './currency.js';
 async function getExchange(foreignCurrency) {
   const response = await CurrencyExchange.getExchange(foreignCurrency);
   if ((response["result"] === "success") ) { 
-    printElements(response, foreignCurrency); 
+    printElements(response); 
   } else {
     printError(response, foreignCurrency);
   }
@@ -21,7 +21,7 @@ function printElements(foreignCurrency) {
   let countryCode = document.querySelector("select#select-currency").value;
   let result = document.querySelector("#showResponse");
   let convertedAmount = foreignCurrency.conversion_rate;
-  if (foreignCurrency) {
+  if (foreignCurrency && foreignCurrency.conversion_rate) {
     result.innerText = `Exchange rate: ${amountEntered} USD = ${(amountEntered * convertedAmount).toFixed(2)} ${countryCode}`;
   } else {
     result.innerText = `Error: Please enter an existing currency.`;
@@ -29,14 +29,17 @@ function printElements(foreignCurrency) {
 }
 
 function printError(error, foreignCurrency) {
-  document.querySelector('#showResponse').innerText = `Error accessing the exchange rate data for USD to ${foreignCurrency}: ${error}`;
+  if (error["error-type"]) {
+    document.querySelector('#showResponse').innerText = `Error accessing the exchange rate data for USD to ${foreignCurrency}: ${error["error-type"]}`;
+  } else {
+    document.querySelector('#showResponse').innerText = `Error accessing the exchange rate data for USD to ${foreignCurrency}: ${error.message}`;
+  }
 }
 
 function handleFormSubmission(event) {
   event.preventDefault();
   document.querySelector('#showResponse').innerText = "";
   let foreignCurrency = document.querySelector("select#select-currency").value;
-  // let foreignCurrency = "ABC";
   getExchange(foreignCurrency);
 }
 
